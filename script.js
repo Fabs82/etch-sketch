@@ -6,6 +6,10 @@ function createSquareDiv() {
     sketchContainer.appendChild(square);
 }
 
-for (let index = 0; index < 16; index++) {
-    createSquareDiv()
+function createMultilpeDivs(number) {
+    for (let index = 0; index < number ** 2; index++) {
+        createSquareDiv()
+    };
 };
+
+createMultilpeDivs(16);
