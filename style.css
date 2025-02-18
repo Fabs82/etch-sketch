@@ -11,7 +11,16 @@ body {
 }
 
 .sketchContainer {
+    box-sizing: content-box;
     border: 1px solid red;
-    width: 800px;
-    height: 800px;
+    width: 832px;
+    height: 832px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.squareDiv {
+    border: 1px solid black;
+    height: 52px;
+    width: 52px;
 }
