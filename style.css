@@ -1,0 +1,17 @@
+* {
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sketchContainer {
+    border: 1px solid red;
+    width: 800px;
+    height: 800px;
+}
