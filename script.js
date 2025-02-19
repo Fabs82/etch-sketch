@@ -1,11 +1,17 @@
 const sketchContainer = document.querySelector("#sketchContainer");
-const numberOfSquares = 16;
+const sketchContainerWidth = 832;
+const sketchContainerHeight = 832;
+sketchContainer.style.width = sketchContainerWidth + "px";
+sketchContainer.style.height = sketchContainerHeight + "px";
+const numberOfSquares = 32;
 
 function createSquareDiv() {
     const square = document.createElement("div");
     square.classList.add("squareDiv");
+    square.style.width = (`${sketchContainerWidth / numberOfSquares}px`);
+    square.style.height = (`${sketchContainerWidth / numberOfSquares}px`);
     sketchContainer.appendChild(square);
-}
+};
 
 function createMultilpeDivs(numberOfSquares) {
     for (let index = 0; index < numberOfSquares ** 2; index++) {
