@@ -13,14 +13,22 @@ function createMultilpeDivs(numberOfSquares) {
     };
 };
 
-createMultilpeDivs(numberOfSquares);
+function randomNumber() {
+    return (Math.floor(Math.random() * 256));
+};
 
+function randomRgbColor() {
+    return (`rgb(${randomNumber()},${randomNumber()},${randomNumber()})`);
+}
+
+createMultilpeDivs(numberOfSquares);
 
 
 const squareNodes = document.querySelectorAll(".squareDiv");
 squareNodes.forEach(element => {
     element.classList.add("newBackground");
     element.addEventListener("mouseover", () => {
-        element.style.backgroundColor = "aqua";
+        element.style.backgroundColor = randomRgbColor();
     });
 });
+
