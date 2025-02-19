@@ -10,9 +10,9 @@ body {
     align-items: center;
 }
 
-.sketchContainer {
+#sketchContainer {
     box-sizing: content-box;
-    border: 1px solid red;
+    border: 3px solid red;
     width: 832px;
     height: 832px;
     display: flex;
