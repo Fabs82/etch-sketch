@@ -1,15 +1,18 @@
 const sketchContainer = document.querySelector("#sketchContainer");
+const numberOfSquares = 16;
 const sketchContainerWidth = 832;
 const sketchContainerHeight = 832;
+const singleSquareWidth = (`${sketchContainerWidth / numberOfSquares}px`);
+const singleSquareHeight = (`${sketchContainerWidth / numberOfSquares}px`);
 sketchContainer.style.width = sketchContainerWidth + "px";
 sketchContainer.style.height = sketchContainerHeight + "px";
-const numberOfSquares = 32;
+
 
 function createSquareDiv() {
     const square = document.createElement("div");
     square.classList.add("squareDiv");
-    square.style.width = (`${sketchContainerWidth / numberOfSquares}px`);
-    square.style.height = (`${sketchContainerWidth / numberOfSquares}px`);
+    square.style.width = singleSquareWidth;
+    square.style.height = singleSquareHeight;
     sketchContainer.appendChild(square);
 };
 
