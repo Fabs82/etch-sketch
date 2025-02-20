@@ -20,6 +20,13 @@ function createMultilpeDivs(numberOfSquares) {
     for (let index = 0; index < numberOfSquares ** 2; index++) {
         createSquareDiv();
     };
+    const squareNodes = document.querySelectorAll(".squareDiv");
+    squareNodes.forEach(element => {
+        element.classList.add("newBackground");
+        element.addEventListener("mouseover", () => {
+            element.style.backgroundColor = randomRgbColor();
+        });
+    });
 };
 
 function randomNumber() {
@@ -31,13 +38,4 @@ function randomRgbColor() {
 }
 
 createMultilpeDivs(numberOfSquares);
-
-
-const squareNodes = document.querySelectorAll(".squareDiv");
-squareNodes.forEach(element => {
-    element.classList.add("newBackground");
-    element.addEventListener("mouseover", () => {
-        element.style.backgroundColor = randomRgbColor();
-    });
-});
 
