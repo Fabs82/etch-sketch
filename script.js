@@ -3,17 +3,18 @@ const sketchContainerWidth = 832;
 const sketchContainerHeight = 832;
 sketchContainer.style.width = sketchContainerWidth + "px";
 sketchContainer.style.height = sketchContainerHeight + "px";
+const resetButton = document.querySelector(".btn");
 let numberOfSquares;
 
 
 function squareHeight(height, number) {
     const singleSquareHeight = (`${height / number}px`);
-    return singleSquareHeight
+    return singleSquareHeight;
 };
 
 function squareWidth(width, number) {
     const singleSquareWidth = (`${width / number}px`);
-    return singleSquareWidth
+    return singleSquareWidth;
 };
 
 
@@ -48,20 +49,18 @@ function createGrid(numberOfSquares) {
 
 function askNumber() {
     numberOfSquares = Number(prompt("Enter a number between 1 and 100:"));
-    while (numberOfSquares > 100 || numberOfSquares < 1) {
+    while (numberOfSquares > 100 || numberOfSquares < 0 || isNaN(numberOfSquares)) {
         numberOfSquares = Number(prompt("Invalid input! Please enter a number between 1 and 100:"));
     };
     return numberOfSquares;
 };
-
-const resetButton = document.querySelector(".btn");
 
 resetButton.addEventListener("click", () => {
     const squareNodes = document.querySelectorAll(".squareDiv");
     squareNodes.forEach(element => {
         sketchContainer.removeChild(element);
     });
-    createGrid(askNumber())
+    createGrid(askNumber());
 });
 
 createGrid(numberOfSquares);

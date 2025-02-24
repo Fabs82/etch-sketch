@@ -1,6 +1,7 @@
 * {
     margin: 0;
     box-sizing: border-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 body {
@@ -15,6 +16,7 @@ body {
     border: 3px solid red;
     display: flex;
     flex-wrap: wrap;
+    background-color: aliceblue;
 }
 
 .squareDiv {
@@ -23,7 +25,6 @@ body {
 
 .btn {
     background-color: #36A9AE;
-    background-image: linear-gradient(#37ADB2, #329CA0);
     border: 1px solid #2A8387;
     border-radius: 4px;
     color: #FFFFFF;
@@ -32,6 +33,22 @@ body {
     line-height: 100%;
     padding: 11px 15px 12px;
     text-align: center;
-    transition: box-shadow .05s ease-in-out, opacity .05s ease-in-out;
-    width: 10%;
+    width: 100%;
+}
+
+.btn:hover {
+    background-color: #2A8387;
+}
+
+.buttonContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    border: 3px solid #2A8387;
+    background-color: aliceblue;
+    padding: 32px;
+}
+
+h1 {
+    color: #2A8387;
 }
