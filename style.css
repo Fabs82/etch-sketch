@@ -23,7 +23,8 @@ body {
     border: 1px solid black;
 }
 
-.btn {
+.btn,
+.eraseBtn {
     background-color: #36A9AE;
     border: 1px solid #2A8387;
     border-radius: 4px;
@@ -36,7 +37,8 @@ body {
     width: 100%;
 }
 
-.btn:hover {
+.btn:hover,
+.eraseBtn:hover {
     background-color: #2A8387;
 }
 

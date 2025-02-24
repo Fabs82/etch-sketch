@@ -4,6 +4,7 @@ const sketchContainerHeight = 832;
 sketchContainer.style.width = sketchContainerWidth + "px";
 sketchContainer.style.height = sketchContainerHeight + "px";
 const resetButton = document.querySelector(".btn");
+const eraseColorButton = document.querySelector(".eraseBtn")
 let numberOfSquares;
 
 
@@ -62,5 +63,16 @@ resetButton.addEventListener("click", () => {
     });
     createGrid(askNumber());
 });
+
+eraseColorButton.addEventListener("click", () => {
+    const squareNodes = document.querySelectorAll(".squareDiv");
+    squareNodes.forEach(element => {
+        element.classList.add("newBackground");
+        element.addEventListener("mouseover", () => {
+            element.style.backgroundColor = "aliceblue";
+        });
+    });
+});
+
 
 createGrid(numberOfSquares);
