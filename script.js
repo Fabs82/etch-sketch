@@ -4,7 +4,9 @@ const sketchContainerHeight = 832;
 sketchContainer.style.width = sketchContainerWidth + "px";
 sketchContainer.style.height = sketchContainerHeight + "px";
 const resetButton = document.querySelector(".btn");
-const eraseColorButton = document.querySelector(".eraseBtn")
+const eraseColorButton = document.querySelector(".eraseBtn");
+const blackButton = document.querySelector(".blackBtn");
+const rgbButton = document.querySelector(".rgbBtn");
 let numberOfSquares = 16;
 
 
@@ -38,11 +40,34 @@ function createGrid(numberOfSquares) {
     for (let index = 0; index < numberOfSquares ** 2; index++) {
         createSquareDiv();
     };
+};
+
+function blackSquareColor() {
+    const squareNodes = document.querySelectorAll(".squareDiv");
+    squareNodes.forEach(element => {
+        element.classList.add("newBackground");
+        element.addEventListener("mouseover", () => {
+            element.style.backgroundColor = "black";
+        });
+    });
+};
+
+function randomSquareColor() {
     const squareNodes = document.querySelectorAll(".squareDiv");
     squareNodes.forEach(element => {
         element.classList.add("newBackground");
         element.addEventListener("mouseover", () => {
             element.style.backgroundColor = randomRgbColor();
+        });
+    });
+};
+
+function eraseSquareColor() {
+    const squareNodes = document.querySelectorAll(".squareDiv");
+    squareNodes.forEach(element => {
+        element.classList.add("newBackground");
+        element.addEventListener("mouseover", () => {
+            element.style.backgroundColor = "aliceblue";
         });
     });
 };
@@ -63,15 +88,8 @@ resetButton.addEventListener("click", () => {
     createGrid(askNumber());
 });
 
-eraseColorButton.addEventListener("click", () => {
-    const squareNodes = document.querySelectorAll(".squareDiv");
-    squareNodes.forEach(element => {
-        element.classList.add("newBackground");
-        element.addEventListener("mouseover", () => {
-            element.style.backgroundColor = "aliceblue";
-        });
-    });
-});
-
+eraseColorButton.addEventListener("click", () => { eraseSquareColor() });
+blackButton.addEventListener("click", () => { blackSquareColor() });
+rgbButton.addEventListener("click", () => { randomSquareColor() });
 
 createGrid(numberOfSquares);

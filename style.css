@@ -24,7 +24,9 @@ body {
 }
 
 .btn,
-.eraseBtn {
+.eraseBtn,
+.blackBtn,
+.rgbBtn {
     background-color: #adb5bd;
     border: 1px solid #6c757d;
     border-radius: 4px;
@@ -38,7 +40,9 @@ body {
 }
 
 .btn:focus,
-.eraseBtn:focus {
+.eraseBtn:focus,
+.blackBtn:focus,
+.rgbBtn:focus {
     background-color: #6c757d;
 }
 
