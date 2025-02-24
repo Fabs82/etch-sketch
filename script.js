@@ -42,7 +42,6 @@ function createGrid(numberOfSquares) {
     };
 };
 
-
 function squareColor(color) {
     const squareNodes = document.querySelectorAll(".squareDiv");
     squareNodes.forEach(element => {
