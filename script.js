@@ -1,5 +1,5 @@
 const sketchContainer = document.querySelector("#sketchContainer");
-const numberOfSquares = 16;
+let numberOfSquares = 16;
 const sketchContainerWidth = 832;
 const sketchContainerHeight = 832;
 const singleSquareWidth = (`${sketchContainerWidth / numberOfSquares}px`);
@@ -7,6 +7,14 @@ const singleSquareHeight = (`${sketchContainerWidth / numberOfSquares}px`);
 sketchContainer.style.width = sketchContainerWidth + "px";
 sketchContainer.style.height = sketchContainerHeight + "px";
 
+
+function randomNumber() {
+    return (Math.floor(Math.random() * 256));
+};
+
+function randomRgbColor() {
+    return (`rgb(${randomNumber()},${randomNumber()},${randomNumber()})`);
+};
 
 function createSquareDiv() {
     const square = document.createElement("div");
@@ -16,7 +24,7 @@ function createSquareDiv() {
     sketchContainer.appendChild(square);
 };
 
-function createMultilpeDivs(numberOfSquares) {
+function createGrid(numberOfSquares) {
     for (let index = 0; index < numberOfSquares ** 2; index++) {
         createSquareDiv();
     };
@@ -29,13 +37,17 @@ function createMultilpeDivs(numberOfSquares) {
     });
 };
 
-function randomNumber() {
-    return (Math.floor(Math.random() * 256));
-};
+createGrid(numberOfSquares);
 
-function randomRgbColor() {
-    return (`rgb(${randomNumber()},${randomNumber()},${randomNumber()})`);
-}
+const resetButton = document.querySelector(".btn");
 
-createMultilpeDivs(numberOfSquares);
+resetButton.addEventListener("click", () => {
+    const squareNodes = document.querySelectorAll(".squareDiv");
+    squareNodes.forEach(element => {
+        sketchContainer.removeChild(element);
+    });
+    //numberOfSquares = Number(prompt("Enter a number:"));
+});
+
+
 
