@@ -69,7 +69,7 @@ resetButton.addEventListener("click", () => {
     createGrid(askNumber());
 });
 
-eraseColorButton.addEventListener("click", () => { squareColor(() => "aliceblue") });
+eraseColorButton.addEventListener("click", () => { squareColor(() => sketchContainer.style.backgroundColor) });
 blackButton.addEventListener("click", () => { squareColor(() => "black") });
 rgbButton.addEventListener("click", () => { squareColor(randomRgbColor) });
 
