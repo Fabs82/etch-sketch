@@ -42,32 +42,13 @@ function createGrid(numberOfSquares) {
     };
 };
 
-function blackSquareColor() {
-    const squareNodes = document.querySelectorAll(".squareDiv");
-    squareNodes.forEach(element => {
-        element.classList.add("newBackground");
-        element.addEventListener("mouseover", () => {
-            element.style.backgroundColor = "black";
-        });
-    });
-};
 
-function randomSquareColor() {
+function squareColor(color) {
     const squareNodes = document.querySelectorAll(".squareDiv");
     squareNodes.forEach(element => {
         element.classList.add("newBackground");
         element.addEventListener("mouseover", () => {
-            element.style.backgroundColor = randomRgbColor();
-        });
-    });
-};
-
-function eraseSquareColor() {
-    const squareNodes = document.querySelectorAll(".squareDiv");
-    squareNodes.forEach(element => {
-        element.classList.add("newBackground");
-        element.addEventListener("mouseover", () => {
-            element.style.backgroundColor = "aliceblue";
+            element.style.backgroundColor = color();
         });
     });
 };
@@ -88,8 +69,8 @@ resetButton.addEventListener("click", () => {
     createGrid(askNumber());
 });
 
-eraseColorButton.addEventListener("click", () => { eraseSquareColor() });
-blackButton.addEventListener("click", () => { blackSquareColor() });
-rgbButton.addEventListener("click", () => { randomSquareColor() });
+eraseColorButton.addEventListener("click", () => { squareColor(() => "aliceblue") });
+blackButton.addEventListener("click", () => { squareColor(() => "black") });
+rgbButton.addEventListener("click", () => { squareColor(randomRgbColor) });
 
 createGrid(numberOfSquares);
