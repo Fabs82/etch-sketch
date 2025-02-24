@@ -1,11 +1,21 @@
 const sketchContainer = document.querySelector("#sketchContainer");
-let numberOfSquares = 16;
 const sketchContainerWidth = 832;
 const sketchContainerHeight = 832;
-const singleSquareWidth = (`${sketchContainerWidth / numberOfSquares}px`);
-const singleSquareHeight = (`${sketchContainerWidth / numberOfSquares}px`);
 sketchContainer.style.width = sketchContainerWidth + "px";
 sketchContainer.style.height = sketchContainerHeight + "px";
+
+let numberOfSquares = 16;
+
+
+function squareHeight(height, number) {
+    const singleSquareHeight = (`${height / number}px`);
+    return singleSquareHeight
+};
+
+function squareWidth(width, number) {
+    const singleSquareWidth = (`${width / number}px`);
+    return singleSquareWidth
+};
 
 
 function randomNumber() {
@@ -19,8 +29,8 @@ function randomRgbColor() {
 function createSquareDiv() {
     const square = document.createElement("div");
     square.classList.add("squareDiv");
-    square.style.width = singleSquareWidth;
-    square.style.height = singleSquareHeight;
+    square.style.width = squareWidth(sketchContainerWidth, numberOfSquares);
+    square.style.height = squareHeight(sketchContainerHeight, numberOfSquares);
     sketchContainer.appendChild(square);
 };
 
@@ -46,7 +56,8 @@ resetButton.addEventListener("click", () => {
     squareNodes.forEach(element => {
         sketchContainer.removeChild(element);
     });
-    //numberOfSquares = Number(prompt("Enter a number:"));
+    numberOfSquares = Number(prompt("Enter a number:"));
+    createGrid(numberOfSquares)
 });
 
 
