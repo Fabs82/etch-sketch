@@ -5,7 +5,7 @@ sketchContainer.style.width = sketchContainerWidth + "px";
 sketchContainer.style.height = sketchContainerHeight + "px";
 const resetButton = document.querySelector(".btn");
 const eraseColorButton = document.querySelector(".eraseBtn")
-let numberOfSquares;
+let numberOfSquares = 16;
 
 
 function squareHeight(height, number) {
@@ -17,7 +17,6 @@ function squareWidth(width, number) {
     const singleSquareWidth = (`${width / number}px`);
     return singleSquareWidth;
 };
-
 
 function randomNumber() {
     return (Math.floor(Math.random() * 256));
