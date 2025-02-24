@@ -3,10 +3,11 @@ const sketchContainerWidth = 832;
 const sketchContainerHeight = 832;
 sketchContainer.style.width = sketchContainerWidth + "px";
 sketchContainer.style.height = sketchContainerHeight + "px";
-const resetButton = document.querySelector(".btn");
+const createGridButton = document.querySelector(".btn");
 const eraseColorButton = document.querySelector(".eraseBtn");
 const blackButton = document.querySelector(".blackBtn");
 const rgbButton = document.querySelector(".rgbBtn");
+const resetButton = document.querySelector(".resetBtn");
 let numberOfSquares = 16;
 
 
@@ -60,7 +61,7 @@ function askNumber() {
     return numberOfSquares;
 };
 
-resetButton.addEventListener("click", () => {
+createGridButton.addEventListener("click", () => {
     const squareNodes = document.querySelectorAll(".squareDiv");
     squareNodes.forEach(element => {
         sketchContainer.removeChild(element);
@@ -71,5 +72,13 @@ resetButton.addEventListener("click", () => {
 eraseColorButton.addEventListener("click", () => { squareColor(() => sketchContainer.style.backgroundColor) });
 blackButton.addEventListener("click", () => { squareColor(() => "black") });
 rgbButton.addEventListener("click", () => { squareColor(randomRgbColor) });
+
+resetButton.addEventListener("click", () => {
+    const squareNodes = document.querySelectorAll(".squareDiv");
+    squareNodes.forEach(element => {
+        sketchContainer.removeChild(element);
+    });
+    createGrid(numberOfSquares = 16);
+});
 
 createGrid(numberOfSquares);
